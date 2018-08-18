@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <com.example.myprac.Mypulltoview
+        android:id="@+id/mypullview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.example.myprac.RefreshView
+            android:id="@+id/myrefresh"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </com.example.myprac.RefreshView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/myrecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+    </com.example.myprac.Mypulltoview>
+
+
+</LinearLayout>
