@@ -22,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     List<String> list=new ArrayList<>();
     Mypulltoview mypulltoview;
-    RefreshView refreshView;
+    RefreshView refreshView1;
     Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
             if (msg.what==1){
                 recyclerView.setAdapter(new MyAdapter(list));
-                refreshView.stopAnimation();
+                refreshView1.stopAnimation();
                 mypulltoview.success();
             }
         }
@@ -46,16 +46,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(list));
         mypulltoview=findViewById(R.id.mypullview);
-        refreshView=findViewById(R.id.myrefresh);
+        refreshView1=findViewById(R.id.myrefresh);
         mypulltoview.setListener(new RefreshListener() {
             @Override
             public void startRefresh() {
-                refreshView.startAnimation();
+                refreshView1.startAnimation();
             }
 
             @Override
             public void successrefresh() {
-                refreshView.stopAnimation();
+                refreshView1.stopAnimation();
                 mypulltoview.success();
             }
 
@@ -116,6 +116,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        refreshView.stopAnimation();
+        refreshView1.stopAnimation();
     }
 }
