@@ -20,11 +20,12 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     List<String> list=new ArrayList<>();
     Mypulltoview mypulltoview;
-    RefreshView refreshView2;
+    RefreshView refreshView;
+    
     Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            if (msg.what==1){
+            if (msg.what==2){
                 recyclerView.setAdapter(new MyAdapter(list));
                 refreshView2.stopAnimation();
                 mypulltoview.success();
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                             Thread.sleep(2000);
                             Collections.reverse(list);
                             Message message=new Message();
-                            message.what=1;
+                            message.what=2;
                             handler.sendMessage(message);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
