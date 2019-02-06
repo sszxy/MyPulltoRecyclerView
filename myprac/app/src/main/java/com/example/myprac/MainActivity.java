@@ -7,11 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     List<String> list=new ArrayList<>();
     Mypulltoview mypulltoview;
-    RefreshView refreshView1;
+    RefreshView refreshView2;
     Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
             if (msg.what==1){
                 recyclerView.setAdapter(new MyAdapter(list));
-                refreshView1.stopAnimation();
+                refreshView2.stopAnimation();
                 mypulltoview.success();
             }
         }
@@ -46,16 +44,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(list));
         mypulltoview=findViewById(R.id.mypullview);
-        refreshView1=findViewById(R.id.myrefresh);
+        refreshView2 =findViewById(R.id.myrefresh);
         mypulltoview.setListener(new RefreshListener() {
             @Override
             public void startRefresh() {
-                refreshView1.startAnimation();
+                refreshView2.startAnimation();
             }
 
             @Override
             public void successrefresh() {
-                refreshView1.stopAnimation();
+                refreshView2.stopAnimation();
                 mypulltoview.success();
             }
 
@@ -116,6 +114,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        refreshView1.stopAnimation();
+        refreshView2.stopAnimation();
     }
 }
