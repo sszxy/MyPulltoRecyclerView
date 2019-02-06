@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            if (msg.what==2){
+            if (msg.what==1){
                 recyclerView.setAdapter(new MyAdapter(list));
                 refreshView2.stopAnimation();
                 mypulltoview.success();
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                             Thread.sleep(2000);
                             Collections.reverse(list);
                             Message message=new Message();
-                            message.what=2;
+                            message.what=1gi;
                             handler.sendMessage(message);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
