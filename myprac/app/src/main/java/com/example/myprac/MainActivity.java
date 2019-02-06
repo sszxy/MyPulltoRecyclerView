@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     List<String> list=new ArrayList<>();
     Mypulltoview mypulltoview;
     RefreshView refreshView2;
-    RecyclerView r2;
+    TextView view;
     
     Handler handler=new Handler(){
         @Override
