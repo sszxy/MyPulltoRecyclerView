@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     List<String> list=new ArrayList<>();
     Mypulltoview mypulltoview;
-    RefreshView refreshView;
+    RefreshView refreshView2;
     
     Handler handler=new Handler(){
         @Override
