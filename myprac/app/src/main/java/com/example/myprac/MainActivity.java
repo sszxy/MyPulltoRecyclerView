@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                             Thread.sleep(2000);
                             Collections.reverse(list);
                             Message message=new Message();
-                            message.what=1gi;
+                            message.what=1;
                             handler.sendMessage(message);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
